@@ -4,10 +4,35 @@ module.exports = {
   client: {
     lib: {
       css: [
-        'public/lib/bootstrap/dist/css/bootstrap.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.css'
+        'public/lib/admin-lte/bootstrap/css/bootstrap.min.css',
+        'public/lib/admin-lte/plugins/timepicker/bootstrap-timepicker.min.css',
+        'public/lib/admin-lte/plugins/colorpicker/bootstrap-colorpicker.min.css',
+        'public/lib/admin-lte/plugins/jvectormap/jquery-jvectormap-1.2.2.css',
+        'public/lib/admin-lte/plugins/datepicker/datepicker3.css',
+        'public/lib/admin-lte/plugins/daterangepicker/daterangepicker-bs3.css',
+        'public/lib/admin-lte/plugins/morris/morris.css',
+        'public/lib/admin-lte/plugins/select2/select2.min.css',
+        'public/lib/admin-lte/dist/css/AdminLTE.min.css',
+        'public/lib/admin-lte/dist/css/skins/_all-skins.min.css',
+        'public/lib/components-font-awesome/css/font-awesome.min.css',
+        'public/lib/ionicons/css/ionicons.css'
+          
       ],
       js: [
+        'public/lib/admin-lte/plugins/jQuery/jQuery-2.2.0.min.js',
+        'public/lib/admin-lte/plugins/jQueryUI/jquery-ui.min.js',
+        'public/lib/admin-lte/bootstrap/js/bootstrap.min.js',
+        'public/lib/admin-lte/plugins/select2/select2.full.min.js',
+        'public/lib/admin-lte/dist/js/app.min.js',
+        'public/lib/admin-lte/plugins/timepicker/bootstrap-timepicker.js',
+        'public/lib/admin-lte/plugins/chartjs/Chart.min.js',
+        'public/lib/admin-lte/plugins/morris/raphael-min.js',
+        'public/lib/admin-lte/plugins/morris/morris.min.js',
+        'public/lib/admin-lte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js',
+        'public/lib/admin-lte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js',
+        'public/lib/admin-lte/plugins/datepicker/bootstrap-datepicker.js',
+        'public/lib/admin-lte/plugins/daterangepicker/moment.js',
+        'public/lib/admin-lte/plugins/daterangepicker/daterangepicker.js',
         'public/lib/angular/angular.js',
         'public/lib/angular-resource/angular-resource.js',
         'public/lib/angular-animate/angular-animate.js',
