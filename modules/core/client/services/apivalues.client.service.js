@@ -22,7 +22,7 @@ function ApiValuesObject(w) {
 }
 
 // Authentication service for user variables
-angular.module('main').service('ApiValues', ['$window',
+angular.module('core').service('ApiValues', ['$window',
     function ($window) {
         return new ApiValuesObject($window);
     }

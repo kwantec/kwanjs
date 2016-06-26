@@ -1,16 +1,11 @@
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus', 'ApiValues',
+angular.module('core').controller('SidebarController', ['$scope', '$state', 'Authentication', 'Menus', 'ApiValues',
   function ($scope, $state, Authentication, Menus, ApiValues) {
     // Expose view variables
     $scope.$state = $state;
     $scope.authentication = Authentication;
 
-
-    $scope.openLoginDialog = function()
-    {
-        alert('Display login dialog here');
-    };
 
     /**
      * Builds the image url of the profile image of the current user
@@ -25,7 +20,6 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
         return 'lib/admin-lte/dist/img/user2-160x160.jpg';
       }
     };
-
     
   }
 ]);
