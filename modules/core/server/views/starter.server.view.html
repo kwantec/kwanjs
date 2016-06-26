@@ -341,7 +341,7 @@ desired effect
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2015 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2015 <a href="#">Kwan Tecnología</a>.</strong> Todos los derechos reservados.
   </footer>
 
   <!-- Control Sidebar -->
@@ -426,6 +426,7 @@ desired effect
 <!--Embedding The User Object-->
 <script type="text/javascript">
   var user = {{ user | json | safe }};
+  var clientData = {{ clientData | json | safe }};
 </script>
 
 <!--Load The Socket.io File-->

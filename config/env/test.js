@@ -35,6 +35,11 @@ module.exports = {
   app: {
     title: defaultEnvConfig.app.title + ' - Test Environment'
   },
+  clientData: {
+    apiAddress: 'localhost',
+    apiPort: 3004,
+    connectionProtocol: 'http://'
+  },
   facebook: {
     clientID: process.env.FACEBOOK_ID || 'APP_ID',
     clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',

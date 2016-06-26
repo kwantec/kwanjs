@@ -36,5 +36,11 @@ module.exports = {
         fileSize: 1*1024*1024 // Max file size in bytes (1 MB)
       }
     }
+  },
+  clientData: {
+    apiVersion: 1,
+    apiAddress: 'localhost',
+    apiPort: 3002,// 3002 used for dev env (default)
+    connectionProtocol: 'http://'
   }
 };

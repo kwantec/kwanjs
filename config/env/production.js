@@ -35,6 +35,11 @@ module.exports = {
       }
     }
   },
+  clientData: {
+    apiAddress: 'localhost',
+    apiPort: 3443,
+    connectionProtocol: 'https://'
+  },
   facebook: {
     clientID: process.env.FACEBOOK_ID || 'APP_ID',
     clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',

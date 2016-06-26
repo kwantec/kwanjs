@@ -44,6 +44,14 @@ var UserSchema = new Schema({
     type: String,
     trim: true
   },
+  token: {
+    type: String,
+    default: 's/n'
+  },
+  token2: {
+    type: String,
+    default: 's/n'
+  },
   email: {
     type: String,
     unique: true,
@@ -84,12 +92,35 @@ var UserSchema = new Schema({
     default: ['user'],
     required: 'Please provide at least one role'
   },
+  confirmedAccount: {
+    isConfirmed: {
+      type: Boolean,
+      default: false
+    },
+    token: {
+      type: String
+    }
+  },
+  gender: {
+    type: Number, // 1: male, 2: female, 3: unknow
+    min: 1,
+    max: 3,
+    default: 3
+  },
+  birthday: {
+    type: Date,
+    default: null
+  },
   updated: {
     type: Date
   },
   created: {
     type: Date,
     default: Date.now
+  },
+  lastActivityTime: {
+    type: Date,
+    default: Date.now()
   },
   /* For reset password */
   resetPasswordToken: {
