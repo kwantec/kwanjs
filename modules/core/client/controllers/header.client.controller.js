@@ -1,15 +1,29 @@
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus', 'ApiValues',
-  function ($scope, $state, Authentication, Menus, ApiValues) {
+angular.module('core').controller('HeaderController',
+    ['$scope', '$translate','$translatePartialLoader','$rootScope', '$state', 'Authentication', 'Menus', 'ApiValues',
+  function ($scope, $translate, $translatePartialLoader, $rootScope, $state, Authentication, Menus, ApiValues) {
     // Expose view variables
     $scope.$state = $state;
     $scope.authentication = Authentication;
 
+    $translatePartialLoader.addPart('core');
+    $translate.refresh();
 
     $scope.openLoginDialog = function()
     {
-        alert('Display login dialog here');
+        //alert('Display login dialog here');
+        var modal = $("#loginModal");
+        var body = $(document.body);
+
+        //Sending the broadcast of the login dialog opened
+        $rootScope.$broadcast('LoginDialogOpened');
+
+        modal.show(function () {
+          body.css("overflow", "hidden"); // Avoid scroll of body
+          modal.css("overflow", "auto");  // Adding scroll to modal
+        });
+
     };
 
     /**

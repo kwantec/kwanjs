@@ -1,10 +1,14 @@
 'use strict';
 
-angular.module('core').controller('SidebarController', ['$scope', '$state', 'Authentication', 'Menus', 'ApiValues',
-  function ($scope, $state, Authentication, Menus, ApiValues) {
+angular.module('core').controller('SidebarController',
+    ['$scope', '$translate','$translatePartialLoader', '$state', 'Authentication', 'Menus', 'ApiValues',
+  function ($scope, $translate, $translatePartialLoader, $state, Authentication, Menus, ApiValues) {
     // Expose view variables
     $scope.$state = $state;
     $scope.authentication = Authentication;
+
+    $translatePartialLoader.addPart('core');
+    $translate.refresh();
 
 
     /**

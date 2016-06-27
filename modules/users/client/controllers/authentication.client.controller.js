@@ -1,7 +1,12 @@
 'use strict';
 
-angular.module('users').controller('AuthenticationController', ['$scope', '$state', '$http', '$location', '$window', 'Authentication', 'PasswordValidator',
-  function ($scope, $state, $http, $location, $window, Authentication, PasswordValidator) {
+angular.module('users').controller('AuthenticationController',
+    ['$scope', '$translate','$translatePartialLoader','$state', '$http', '$location', '$window', 'Authentication', 'PasswordValidator',
+  function ($scope, $translate, $translatePartialLoader, $state, $http, $location, $window, Authentication, PasswordValidator) {
+
+    $translatePartialLoader.addPart('users');
+    $translate.refresh();
+
     $scope.authentication = Authentication;
     $scope.popoverMsg = PasswordValidator.getPopoverMsg();
 
@@ -62,5 +67,57 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
       // Effectively call OAuth authentication route:
       $window.location.href = url;
     };
+
+
+    /***
+     * Closes the login dialog with a success
+     * */
+    $scope.loginSuccess = function () {
+      $('#loginModal').hide(function () {
+        $scope.visible = false;
+        var body = $(document.body);
+        body.css("overflow", "auto"); // Adding scroll to body
+      });
+    };
+
+    // open dialog function
+    $scope.openLoginDialog = function () {
+      var modal = $("#loginModal");
+      var body = $(document.body);
+
+      modal.show(function () {
+        body.css("overflow", "hidden"); // Avoid scroll of body
+        modal.css("overflow", "auto");  // Adding scroll to modal
+      });
+    };
+
+    /**
+     * Closes the login modal
+     * */
+    $scope.closeModal = function (onlyCloseModal) {
+      $('#loginModal').hide(function () {
+        $scope.visible = false;
+        var body = $(document.body);
+        body.css("overflow", "auto"); // Adding scroll to body
+
+        // FIXME recover this that is commented out
+        /*
+        httpBuffer.rejectAll();
+        Authentication.logout(function () {
+          if (!onlyCloseModal) {
+            if ($scope.isExpiredSession) {
+              $window.location.href = '/';
+            } else {
+              $location.path("/");
+            }
+          }
+        });
+        */
+
+      });
+    };
+
+
+
   }
 ]);
