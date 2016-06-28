@@ -15,8 +15,8 @@ module.exports = {
         'public/lib/admin-lte/dist/css/AdminLTE.min.css',
         'public/lib/admin-lte/dist/css/skins/_all-skins.min.css',
         'public/lib/components-font-awesome/css/font-awesome.min.css',
-        'public/lib/ionicons/css/ionicons.css'
-          
+        'public/lib/ionicons/css/ionicons.css',
+        'public/lib/angular-toastr/dist/angular-toastr.min.css'
       ],
       js: [
         'public/lib/admin-lte/plugins/jQuery/jQuery-2.2.0.min.js',
@@ -37,13 +37,14 @@ module.exports = {
         'public/lib/angular-translate/angular-translate.min.js',
         'public/lib/angular-translate-loader-partial/angular-translate-loader-partial.min.js',
         'public/lib/angular-resource/angular-resource.js',
-        'public/lib/angular-animate/angular-animate.js',
+        'public/lib/angular-animate/angular-animate.min.js',
         'public/lib/angular-messages/angular-messages.js',
         'public/lib/angular-ui-router/release/angular-ui-router.js',
         'public/lib/angular-ui-utils/ui-utils.js',
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
         'public/lib/angular-sanitize/angular-sanitize.min.js',
+        'public/lib/angular-toastr/dist/angular-toastr.tpls.min.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
