@@ -7,7 +7,8 @@ function ApiValuesObject(w) {
 
     this.apiBaseUrl = function() {
         return w.connectionProtocol + w.apiAddress +
-            ':' + w.apiPort + '/apiv' + w.apiVersion + '/';
+           // ':' + w.apiPort + '/apiv' + w.apiVersion + '/';
+            ':' + w.apiPort + '/api/';
     };
 
     this.baseImageUrl = function(){
@@ -23,6 +24,12 @@ function ApiValuesObject(w) {
 
 // Authentication service for user variables
 angular.module('core').service('ApiValues', ['$window',
+    function ($window) {
+        return new ApiValuesObject($window);
+    }
+]);
+
+angular.module('users').service('ApiValues', ['$window',
     function ($window) {
         return new ApiValuesObject($window);
     }

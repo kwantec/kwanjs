@@ -45,6 +45,8 @@ module.exports = {
         'public/lib/angular-file-upload/angular-file-upload.js',
         'public/lib/angular-sanitize/angular-sanitize.min.js',
         'public/lib/angular-toastr/dist/angular-toastr.tpls.min.js',
+        'public/lib/ngstorage/ngStorage.min.js',
+        'public/lib/q/q.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
