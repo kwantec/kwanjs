@@ -36,7 +36,6 @@ module.exports = {
   },
   clientData: {
     apiAddress: 'localhost',
-    apiPort: 3002,
     connectionProtocol: 'http://'
   },
   facebook: {

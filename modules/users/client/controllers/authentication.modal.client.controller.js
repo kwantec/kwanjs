@@ -70,8 +70,14 @@ angular.module('users').controller('AuthenticationModalController',
             $scope.credentials.username = $scope.credentials.email;
             $scope.credentials.displayName = $scope.credentials.firstName + ' ' + $scope.credentials.lastName;
 
+            //Authentication.signUp($scope.credentials);
+
             Authentication.signUp($scope.credentials).then(function (response) {
               //Setting the current user object
+              console.log('success :');
+              console.log(JSON.stringify(response));
+
+              /*
               Authentication.currentUser = Authentication.registerUser(response);
 
               //Control flags ???
@@ -84,10 +90,17 @@ angular.module('users').controller('AuthenticationModalController',
               $scope.clearAuthDialog();
               //sending confirm email message
               toastr.success($scope.EMAIL_SEND, $scope.EMAIL_CONFIRM_TITLE);
+              */
+
 
             }).catch(function (response) {
+
+              console.log('Error :');
+              console.log(JSON.stringify(response));
+
               toastr.warning($scope.pError, response.message);
             });
+
           } else {
             toastr.warning($scope.pFillAllFields, $scope.pIncomplete);
           }

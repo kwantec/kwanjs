@@ -40,7 +40,7 @@ module.exports = {
   clientData: {
     apiVersion: 1,
     apiAddress: 'localhost',
-    apiPort: 3002,// 3002 used for dev env (default)
+    apiPort: 3000,// 3002 used for dev env (default)
     connectionProtocol: 'http://'
   }
 };

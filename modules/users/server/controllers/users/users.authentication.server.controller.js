@@ -20,6 +20,12 @@ var noReturnUrls = [
  */
 exports.signup = function (req, res) {
   // For security measurement we remove the roles from the req.body object
+
+  console.log('======================ENTERED signup===========================================');
+  console.log('RECEIVED SIGN-UP CALL WITH: ' + req.body);
+
+  /*
+
   delete req.body.roles;
 
   // Init Variables
@@ -30,7 +36,7 @@ exports.signup = function (req, res) {
   user.provider = 'local';
   user.displayName = user.firstName + ' ' + user.lastName;
   user.username = user.email;
-  
+
   // Then save the user
   user.save(function (err) {
     if (err) {
@@ -51,6 +57,13 @@ exports.signup = function (req, res) {
       });
     }
   });
+
+*/
+  console.log('=========================EXITED signup========================================');
+  var ret = {
+    result:'OK'
+  };
+  res.json(ret);
 };
 
 /**

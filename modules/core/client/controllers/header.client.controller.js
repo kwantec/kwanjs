@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('core').controller('HeaderController',
-    ['$scope', '$translate','$translatePartialLoader','$rootScope', '$state', 'Authentication', 'Menus', 'ApiValues',
-  function ($scope, $translate, $translatePartialLoader, $rootScope, $state, Authentication, Menus, ApiValues) {
+    ['$scope', '$translate','$translatePartialLoader','$rootScope', '$state', 'Authentication', 'Menus', 'ClientData',
+  function ($scope, $translate, $translatePartialLoader, $rootScope, $state, Authentication, Menus, ClientData) {
     // Expose view variables
     $scope.$state = $state;
     $scope.authentication = Authentication;
@@ -35,7 +35,7 @@ angular.module('core').controller('HeaderController',
       if ($scope.authentication.currentUser) {
         return $scope.authentication.currentUser.profileImageURL;
       } else {
-        //return ApiValues.baseImageUrl() + 'lib/admin-lte/dist/img/user2-160x160.jpg';
+        //return ClientData.baseImageUrl() + 'lib/admin-lte/dist/img/user2-160x160.jpg';
         return 'lib/admin-lte/dist/img/user2-160x160.jpg';
       }
     };

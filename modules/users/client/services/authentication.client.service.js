@@ -1,12 +1,12 @@
 'use strict';
 
 // Authentication service for user variables
-angular.module('users').factory('Authentication', ['$window','$injector','$localStorage','$q','ApiValues',
-    function ($window, $injector, $localStorage, $q, ApiValues) {
+angular.module('users').factory('Authentication', ['$window','$injector','$localStorage','$q','ClientData',
+    function ($window, $injector, $localStorage, $q, ClientData) {
 
-        var signUpUrl = ApiValues.apiBaseUrl() + '/auth/signup';
-        var signInUrl = ApiValues.apiBaseUrl() + '/auth/signin';
-        var signOutUrl = ApiValues.apiBaseUrl() + '/auth/signout';
+        //var signUpUrl = ApiValues.apiBaseUrl() + 'auth/signup';
+        //var signInUrl = ApiValues.apiBaseUrl() + 'auth/signin';
+        //var signOutUrl = ApiValues.apiBaseUrl() + 'auth/signout';
 
         //var signUpUrl = 'http://localhost:3000/auth/signup';
         //var signInUrl = 'http://localhost:3000/auth/signin';
@@ -17,6 +17,7 @@ angular.module('users').factory('Authentication', ['$window','$injector','$local
          if (isLoggedIn())
          return $localStorage.user;
          else
+
          return undefined;
          }
          var currentUser = getCurrentUser(); //Sets the current user each time that this singleton is created
@@ -72,11 +73,37 @@ angular.module('users').factory('Authentication', ['$window','$injector','$local
         //Process the sign up petition from the controllers
         function signUp(credentials) {
             //Defer object for the signUp promise
+            console.log('called signup service with credentials: '+ JSON.stringify(credentials));
+
+            var theUrl = ClientData.apiBaseUrl() + 'auth/signup';
+/*
+
+            console.log ('Calling ' + theUrl);
+
+            var $http = $injector.get('$http');
+
+            $http.post(theUrl, credentials).success(function (response) {
+                // If successful we assign the response to the global user model
+                //$scope.authentication.user = response;
+
+                console.log('success :');
+                console.log(JSON.stringify(response));
+                // And redirect to the previous or home page
+                //$state.go($state.previous.state.name || 'home', $state.previous.params);
+            }).error(function (response) {
+                //$scope.error = response.message;
+                console.log ('Error: ');
+                console.log(JSON.stringify(response));
+            });
+*/
+
+
+
             var signUpDefer = $q.defer();
 
             //Getting the $http service via injector for avoiding collisions with $http interceptor
             var $http = $injector.get('$http');
-            $http.post(signUpUrl, credentials).success(function (response) {
+            $http.post(theUrl, credentials).success(function (response) {
                 //Returning the response of the api
                 signUpDefer.resolve(response);
             }).error(function (response) {
@@ -84,6 +111,7 @@ angular.module('users').factory('Authentication', ['$window','$injector','$local
             });
 
             return signUpDefer.promise;
+
         }
 
         /*
