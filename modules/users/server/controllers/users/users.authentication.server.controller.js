@@ -24,7 +24,7 @@ exports.signup = function (req, res) {
   console.log('======================ENTERED signup===========================================');
   console.log('RECEIVED SIGN-UP CALL WITH: ' + req.body);
 
-  /*
+
 
   delete req.body.roles;
 
@@ -34,8 +34,15 @@ exports.signup = function (req, res) {
 
   // Add missing user fields
   user.provider = 'local';
-  user.displayName = user.firstName + ' ' + user.lastName;
-  user.username = user.email;
+  if ( (user.displayName === undefined) || (user.displayName === null))
+  {
+      user.displayName = user.firstName + ' ' + user.lastName;
+  }
+  if ( (user.username === undefined) || (user.username === null))
+  {
+    user.username = user.email;
+  }
+
 
   // Then save the user
   user.save(function (err) {
@@ -58,7 +65,7 @@ exports.signup = function (req, res) {
     }
   });
 
-*/
+
   console.log('=========================EXITED signup========================================');
   var ret = {
     result:'OK'

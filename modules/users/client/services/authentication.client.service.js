@@ -76,28 +76,6 @@ angular.module('users').factory('Authentication', ['$window','$injector','$local
             console.log('called signup service with credentials: '+ JSON.stringify(credentials));
 
             var theUrl = ClientData.apiBaseUrl() + 'auth/signup';
-/*
-
-            console.log ('Calling ' + theUrl);
-
-            var $http = $injector.get('$http');
-
-            $http.post(theUrl, credentials).success(function (response) {
-                // If successful we assign the response to the global user model
-                //$scope.authentication.user = response;
-
-                console.log('success :');
-                console.log(JSON.stringify(response));
-                // And redirect to the previous or home page
-                //$state.go($state.previous.state.name || 'home', $state.previous.params);
-            }).error(function (response) {
-                //$scope.error = response.message;
-                console.log ('Error: ');
-                console.log(JSON.stringify(response));
-            });
-*/
-
-
 
             var signUpDefer = $q.defer();
 

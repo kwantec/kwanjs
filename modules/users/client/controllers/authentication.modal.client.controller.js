@@ -77,8 +77,9 @@ angular.module('users').controller('AuthenticationModalController',
               console.log('success :');
               console.log(JSON.stringify(response));
 
-              /*
-              Authentication.currentUser = Authentication.registerUser(response);
+              $scope.authentication.user = response;
+
+              //Authentication.currentUser = Authentication.registerUser(response);
 
               //Control flags ???
               $scope.tabControlls = '2';
@@ -90,7 +91,6 @@ angular.module('users').controller('AuthenticationModalController',
               $scope.clearAuthDialog();
               //sending confirm email message
               toastr.success($scope.EMAIL_SEND, $scope.EMAIL_CONFIRM_TITLE);
-              */
 
 
             }).catch(function (response) {
