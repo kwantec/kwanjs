@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('core').controller('HeaderController',
-    ['$scope', '$translate','$translatePartialLoader','$rootScope', '$state', 'Authentication', 'Menus', 'ClientData',
-  function ($scope, $translate, $translatePartialLoader, $rootScope, $state, Authentication, Menus, ClientData) {
+    ['$scope', '$translate','$translatePartialLoader','$rootScope', '$state', 'Authentication', 'Menus', 'ClientData', '$window',
+  function ($scope, $translate, $translatePartialLoader, $rootScope, $state, Authentication, Menus, ClientData, $window) {
     // Expose view variables
     $scope.$state = $state;
     $scope.authentication = Authentication;
@@ -39,7 +39,10 @@ angular.module('core').controller('HeaderController',
         return 'lib/admin-lte/dist/img/user2-160x160.jpg';
       }
     };
-
+    
+    $scope.clickedLogOut = function(){
+        $scope.authentication.user = undefined;  
+    };
     
   }
 ]);
