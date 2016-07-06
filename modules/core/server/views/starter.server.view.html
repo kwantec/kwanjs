@@ -213,27 +213,27 @@ desired effect
           </li>
 
           <!-- Login link (when not logged-in -->
-          <li data-ui-sref-active="active" data-ng-hide="authentication.currentUser" ng-click="openLoginDialog()">
+          <li data-ui-sref-active="active" data-ng-hide="authentication.user" ng-click="openLoginDialog()">
             <a target="_self" >Login</a>
           </li>
 
           <!-- User Account Menu -->
-          <li class="dropdown user user-menu" data-ng-show="authentication.currentUser">
+          <li class="dropdown user user-menu" data-ng-show="authentication.user">
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
               <img ng-src="{% raw %}{{ buildProfileImage()}}{% endraw %}" class="user-image" alt="User Image" />
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs"> {% raw %}{{ authentication.currentUser.displayName}}{% endraw %} </span>
+              <span class="hidden-xs"> {% raw %}{{ authentication.user.displayName}}{% endraw %} </span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
                 <img ng-src="{% raw %}{{ buildProfileImage()}}{% endraw %}"
                      class="img-circle"
-                     alt="{% raw %}{{ authentication.currentUser.displayName}}{% endraw %}" />
+                     alt="{% raw %}{{ authentication.user.displayName}}{% endraw %}" />
                 <p>
-                  {% raw %}{{ authentication.currentUser.displayName}}{% endraw %}
+                  {% raw %}{{ authentication.user.displayName}}{% endraw %}
                 </p>
               </li>
               <!-- Menu Body -->
@@ -257,7 +257,7 @@ desired effect
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a ng-click="clickedLogOut()" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -277,12 +277,12 @@ desired effect
     <section class="sidebar">
 
       <!-- Sidebar user panel (optional) -->
-      <div class="user-panel" data-ng-show="authentication.currentUser">
+      <div class="user-panel" data-ng-show="authentication.user">
         <div class="pull-left image">
           <img ng-src="{% raw %}{{ buildProfileImage()}}{% endraw %}" class="img-circle" style="width: 30px; height: 30px;;" alt="User Image" />
         </div>
         <div class="pull-left info">
-          <p>{% raw %}{{ authentication.currentUser.displayName}}{% endraw %}</p>
+          <p>{% raw %}{{ authentication.user.displayName}}{% endraw %}</p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
