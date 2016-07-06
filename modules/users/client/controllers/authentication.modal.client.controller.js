@@ -125,7 +125,7 @@ angular.module('users').controller('AuthenticationModalController',
           $scope.credentials.password = "";
 
           //Setting the current user object
-          Authentication.currentUser = Authentication.registerUser(response);
+           $scope.authentication.user = response;
 
           /* RECOVER THIS httpBuffer functionality
           //We liberate the httpBuffer if any request is pending
